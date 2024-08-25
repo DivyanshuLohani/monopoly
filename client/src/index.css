@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.board {
+  display: grid;
+  grid-template-areas:
+    "go top jail"
+    "left center right"
+    "goto-jail bottom vacation";
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.go {
+  grid-area: go;
+}
+.jail {
+  grid-area: jail;
+}
+
+.goto-jail {
+  grid-area: goto-jail;
+}
+.vacation {
+  grid-area: vacation;
+}
+.center {
+  grid-area: center;
+}
+.top {
+  grid-area: top;
+}
+.bottom {
+  grid-area: bottom;
+}
+.left {
+  grid-area: left;
+  flex-direction: column;
+}
+.right {
+  grid-area: right;
+  flex-direction: column;
+}
