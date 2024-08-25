@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-[#0F0F0F] text-white;
+}
+
 .board {
   display: grid;
   grid-template-areas:
@@ -42,4 +46,8 @@
 .right {
   grid-area: right;
   flex-direction: column;
+}
+
+.block {
+  @apply h-full w-full flex flex-col items-center justify-center rounded-lg;
 }

@@ -30,7 +30,7 @@ export default function Block({
 
   return (
     <div
-      className={`w-20 h-20 bg-black text-white flex items-center justify-center cursor-pointer ${
+      className={`w-20 h-20 text-white flex items-center justify-center select-none ${
         orientation === "left" && "rotate-90"
       } ${orientation === "right" && "-rotate-90"}`}
     >
