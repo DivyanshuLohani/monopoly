@@ -1,4 +1,4 @@
-interface GameMap {
+export interface GameMap {
   id: string;
   blocks: Block[];
   goReward: GoReward;
@@ -6,7 +6,7 @@ interface GameMap {
   surprises: SurpriseDeck;
 }
 
-interface GameRoomSettings {
+export interface GameRoomSettings {
   isPrivate: boolean;
   maxPlayers: number;
   canBotsJoin: number;
@@ -21,7 +21,7 @@ interface GameRoomSettings {
   evenBuild: boolean;
 }
 
-interface GameStats {
+export interface GameStats {
   turnsCount: number;
   doublesCount: number;
   heatMap: number[] | null;
@@ -30,7 +30,7 @@ interface GameStats {
   prisonVisits: number;
 }
 
-interface Auction {
+export interface Auction {
   propertyIndex: number;
   bidAmount: number;
   bidder: Player;
@@ -38,7 +38,7 @@ interface Auction {
   endsAt: Date;
 }
 
-interface Mortgage {
+export interface Mortgage {
   propertyIndex: number;
   backAmount: number;
 }
@@ -60,7 +60,7 @@ export interface Room {
   participantsOrder: Player[] | null;
 }
 
-interface Player {
+export interface Player {
   id: string;
   name: string;
   appearance: string;
@@ -72,7 +72,7 @@ interface Player {
   suspensionLeft: number; // For jail // Max 3 // Min 0
 }
 
-interface Block {
+export interface Block {
   name: string;
   type: BlockType;
   price?: number;
@@ -82,40 +82,40 @@ interface Block {
   level?: number;
   housePrice?: number;
   hotelPrice?: number;
-  blockType?: number;
+  blockType?: BlockType;
   category?: number; // For special properties
   playersInJail: Player[]; // For jail
   jailAmount?: number; // For Jail
 }
 
-interface Country {
+export interface Country {
   name: string;
   id: string;
 }
 
-interface GoReward {
+export interface GoReward {
   land: number;
   pass: number;
 }
 
-interface TreasureDeck {
+export interface TreasureDeck {
   stack: number;
   bonuses: Bonus[];
   currentIndex: number;
   pardonCardHolder: Player | null;
 }
 
-interface SurpriseDeck {
+export interface SurpriseDeck {
   stack: number;
   bonuses: Bonus[];
 }
 
-interface Bonus {
+export interface Bonus {
   event: BonusEvent;
   message: string;
 }
 
-interface BonusEvent {
+export interface BonusEvent {
   _type: number;
   paymentType?: number;
   amount?: number;
@@ -128,12 +128,14 @@ interface BonusEvent {
   category?: number;
 }
 
-enum BlockType {
+export enum BlockType {
   Start = 1,
   Property,
-  Utility,
-  Railroad,
-  Tax,
+  Transport,
+  Railway,
+  Airport,
+  LuxuryTax,
+  IncomeTax,
   Chance,
   Tresure,
   GoToJail,
@@ -141,7 +143,7 @@ enum BlockType {
   Vacation,
 }
 
-enum GameState {
+export enum GameState {
   Lobby,
   Started,
   Ended,

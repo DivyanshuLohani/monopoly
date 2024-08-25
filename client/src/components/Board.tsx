@@ -1,4 +1,6 @@
 import { convertBoard } from "../lib/utils";
+import { BlockType } from "../types";
+import Block from "./Blocks/block";
 import GoToJail from "./Blocks/GoToJail";
 import Jail from "./Blocks/Jail";
 import Start from "./Blocks/Start";
@@ -7,7 +9,7 @@ import Vacation from "./Blocks/Vacation";
 const cityData = [
   {
     name: "Go",
-    type: "city",
+    type: BlockType.Property,
     price: 0,
     owner: null,
     isMortgaged: false,
@@ -16,7 +18,7 @@ const cityData = [
   },
   {
     name: "New York",
-    type: "city",
+    type: BlockType.Property,
     price: 200,
     owner: null,
     isMortgaged: false,
@@ -28,14 +30,14 @@ const cityData = [
   },
   {
     name: "Chance Card",
-    type: "chance",
+    type: BlockType.Chance,
     isMortgaged: false,
     country: "USA",
     playersInJail: [],
   },
   {
     name: "Los Angeles",
-    type: "city",
+    type: BlockType.Property,
     price: 180,
     owner: null,
     isMortgaged: false,
@@ -47,14 +49,14 @@ const cityData = [
   },
   {
     name: "Treasure Chest",
-    type: "treasure",
+    type: BlockType.Tresure,
     isMortgaged: false,
     country: "UK",
     playersInJail: [],
   },
   {
     name: "London",
-    type: "city",
+    type: BlockType.Property,
     price: 220,
     owner: null,
     isMortgaged: false,
@@ -66,7 +68,7 @@ const cityData = [
   },
   {
     name: "Income Tax",
-    type: "tax",
+    type: BlockType.IncomeTax,
     isMortgaged: false,
     country: "UK",
     playersInJail: [],
@@ -74,7 +76,7 @@ const cityData = [
   },
   {
     name: "Paris",
-    type: "city",
+    type: BlockType.Property,
     price: 250,
     owner: null,
     isMortgaged: false,
@@ -86,14 +88,14 @@ const cityData = [
   },
   {
     name: "Chance Card",
-    type: "chance",
+    type: BlockType.Chance,
     isMortgaged: false,
     country: "France",
     playersInJail: [],
   },
   {
     name: "Berlin",
-    type: "city",
+    type: BlockType.Property,
     price: 300,
     owner: null,
     isMortgaged: false,
@@ -105,7 +107,7 @@ const cityData = [
   },
   {
     name: "Jail",
-    type: "jail",
+    type: BlockType.Jail,
     isMortgaged: false,
     country: "Germany",
     playersInJail: [],
@@ -113,7 +115,7 @@ const cityData = [
   },
   {
     name: "Munich",
-    type: "city",
+    type: BlockType.Property,
     price: 280,
     owner: null,
     isMortgaged: false,
@@ -125,14 +127,14 @@ const cityData = [
   },
   {
     name: "Treasure Chest",
-    type: "treasure",
+    type: BlockType.Tresure,
     isMortgaged: false,
     country: "Germany",
     playersInJail: [],
   },
   {
     name: "Tokyo",
-    type: "city",
+    type: BlockType.Property,
     price: 320,
     owner: null,
     isMortgaged: false,
@@ -144,7 +146,7 @@ const cityData = [
   },
   {
     name: "Luxury Tax",
-    type: "tax",
+    type: BlockType.LuxuryTax,
     isMortgaged: false,
     country: "France",
     playersInJail: [],
@@ -152,7 +154,7 @@ const cityData = [
   },
   {
     name: "Beijing",
-    type: "city",
+    type: BlockType.Property,
     price: 350,
     owner: null,
     isMortgaged: false,
@@ -164,7 +166,7 @@ const cityData = [
   },
   {
     name: "Chicago",
-    type: "city",
+    type: BlockType.Property,
     price: 210,
     owner: null,
     isMortgaged: false,
@@ -176,14 +178,14 @@ const cityData = [
   },
   {
     name: "Treasure Chest",
-    type: "treasure",
+    type: BlockType.Tresure,
     isMortgaged: false,
     country: "USA",
     playersInJail: [],
   },
   {
     name: "Houston",
-    type: "city",
+    type: BlockType.Property,
     price: 230,
     owner: null,
     isMortgaged: false,
@@ -195,14 +197,14 @@ const cityData = [
   },
   {
     name: "Chance Card",
-    type: "chance",
+    type: BlockType.Chance,
     isMortgaged: false,
     country: "USA",
     playersInJail: [],
   },
   {
     name: "Go to Jail",
-    type: "jail",
+    type: BlockType.GoToJail,
     isMortgaged: false,
     country: "USA",
     playersInJail: [],
@@ -210,7 +212,7 @@ const cityData = [
   },
   {
     name: "San Francisco",
-    type: "city",
+    type: BlockType.Property,
     price: 260,
     owner: null,
     isMortgaged: false,
@@ -223,7 +225,7 @@ const cityData = [
 
   {
     name: "Tokyo",
-    type: "city",
+    type: BlockType.Property,
     price: 320,
     owner: null,
     isMortgaged: false,
@@ -235,7 +237,7 @@ const cityData = [
   },
   {
     name: "Seoul",
-    type: "city",
+    type: BlockType.Property,
     price: 340,
     owner: null,
     isMortgaged: false,
@@ -247,14 +249,14 @@ const cityData = [
   },
   {
     name: "Treasure Chest",
-    type: "treasure",
+    type: BlockType.Tresure,
     isMortgaged: false,
     country: "South Korea",
     playersInJail: [],
   },
   {
     name: "Beijing",
-    type: "city",
+    type: BlockType.Property,
     price: 350,
     owner: null,
     isMortgaged: false,
@@ -266,7 +268,7 @@ const cityData = [
   },
   {
     name: "Sydney",
-    type: "city",
+    type: BlockType.Property,
     price: 300,
     owner: null,
     isMortgaged: false,
@@ -278,7 +280,7 @@ const cityData = [
   },
   {
     name: "Melbourne",
-    type: "city",
+    type: BlockType.Property,
     price: 280,
     owner: null,
     isMortgaged: false,
@@ -291,7 +293,7 @@ const cityData = [
 
   {
     name: "Berlin",
-    type: "city",
+    type: BlockType.Property,
     price: 300,
     owner: null,
     isMortgaged: false,
@@ -303,7 +305,7 @@ const cityData = [
   },
   {
     name: "Munich",
-    type: "city",
+    type: BlockType.Property,
     price: 280,
     owner: null,
     isMortgaged: false,
@@ -315,14 +317,14 @@ const cityData = [
   },
   {
     name: "Vacation",
-    type: "treasure",
+    type: BlockType.Tresure,
     isMortgaged: false,
     country: "Australia",
     playersInJail: [],
   },
   {
     name: "Paris",
-    type: "city",
+    type: BlockType.Property,
     price: 250,
     owner: null,
     isMortgaged: false,
@@ -334,7 +336,7 @@ const cityData = [
   },
   {
     name: "Rome",
-    type: "city",
+    type: BlockType.Property,
     price: 270,
     owner: null,
     isMortgaged: false,
@@ -346,7 +348,7 @@ const cityData = [
   },
   {
     name: "Athens",
-    type: "city",
+    type: BlockType.Property,
     price: 230,
     owner: null,
     isMortgaged: false,
@@ -358,14 +360,14 @@ const cityData = [
   },
   {
     name: "Treasure Chest",
-    type: "treasure",
+    type: BlockType.Tresure,
     isMortgaged: false,
     country: "Greece",
     playersInJail: [],
   },
   {
     name: "Lisbon",
-    type: "city",
+    type: BlockType.Property,
     price: 210,
     owner: null,
     isMortgaged: false,
@@ -377,7 +379,7 @@ const cityData = [
   },
   {
     name: "Madrid",
-    type: "city",
+    type: BlockType.Property,
     price: 250,
     owner: null,
     isMortgaged: false,
@@ -389,7 +391,7 @@ const cityData = [
   },
   {
     name: "Berlin",
-    type: "city",
+    type: BlockType.Property,
     price: 300,
     owner: null,
     isMortgaged: false,
@@ -401,7 +403,7 @@ const cityData = [
   },
   {
     name: "Barcelona",
-    type: "city",
+    type: BlockType.Property,
     price: 300,
     owner: null,
     isMortgaged: false,
@@ -413,7 +415,7 @@ const cityData = [
   },
   {
     name: "Hamburg",
-    type: "city",
+    type: BlockType.Property,
     price: 300,
     owner: null,
     isMortgaged: false,
@@ -427,7 +429,7 @@ const cityData = [
 
 export default function Board() {
   return (
-    <div className="flex justify-center w-full h-full scale-90">
+    <div className="flex justify-center w-full h-full scale-70">
       <div className="board">
         <div className="center w-full h-full flex items-center justify-center">
           CENTER
@@ -451,8 +453,12 @@ export default function Board() {
           }
           return (
             <div className={`${side} flex justify-evenly`} key={i}>
-              {e.map((_, i) => (
-                <div className="w-10 h-10 bg-green-400 m-1" key={i}></div>
+              {e.map((e, i) => (
+                <Block
+                  key={i}
+                  blockData={e}
+                  orientation={side as "left" | "right" | "top" | "bottom"}
+                />
               ))}
             </div>
           );
