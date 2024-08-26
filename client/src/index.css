@@ -49,5 +49,5 @@ body {
 }
 
 .block {
-  @apply h-full w-full flex flex-col items-center justify-center rounded-lg;
+  @apply h-full w-full flex flex-col items-center rounded-lg bg-cover bg-center;
 }

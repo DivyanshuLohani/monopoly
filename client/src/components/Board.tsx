@@ -1,12 +1,14 @@
 import { convertBoard } from "../lib/utils";
-import { BlockType } from "../types";
+import { Block as IBlock, BlockType } from "../types";
 import Block from "./Blocks/block";
 import GoToJail from "./Blocks/GoToJail";
 import Jail from "./Blocks/Jail";
 import Start from "./Blocks/Start";
 import Vacation from "./Blocks/Vacation";
+import Dice from "./Dice";
+import Token from "./Token/Token";
 
-const cityData = [
+const cityData: IBlock[] = [
   {
     name: "Go",
     type: BlockType.Property,
@@ -429,10 +431,16 @@ const cityData = [
 
 export default function Board() {
   return (
-    <div className="flex justify-center w-full h-full scale-70">
-      <div className="board">
+    <div className="flex justify-center w-full h-full">
+      <div className="board relative">
+        <div className="absolute w-full h-full top-0 bottom-0 right-0 left-0 pointer-events-none">
+          <Token blockIndex={22} color="#aaff11" />
+          <Token blockIndex={34} color="#ee11ff" />
+          <Token blockIndex={0} color="#ffee11" />
+          <Token blockIndex={13} color="#fffffe" />
+        </div>
         <div className="center w-full h-full flex items-center justify-center">
-          CENTER
+          <Dice />
         </div>
         <Start />
         <Jail />

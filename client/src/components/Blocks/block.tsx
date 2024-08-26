@@ -12,7 +12,7 @@ export default function Block({
   blockData: IBlock;
   orientation: "left" | "right" | "top" | "bottom";
 }) {
-  let element = <ProperyCard blockData={blockData} />;
+  let element = <ProperyCard blockData={blockData} side={orientation} />;
   switch (blockData.type) {
     case BlockType.Chance:
       element = <ChanceCard />;

@@ -78,7 +78,8 @@ export interface Block {
   price?: number;
   owner?: Player | null;
   isMortgaged: boolean;
-  country: Country;
+  // country: Country;
+  country: string;
   level?: number;
   housePrice?: number;
   hotelPrice?: number;

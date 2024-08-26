@@ -1,5 +1,7 @@
+import { Block } from "../types";
+
 // To be changed
-export function convertBoard(board: any) {
+export function convertBoard(board: Block[]) {
   const ret = [];
   for (let i = 0; i < 4; i++) {
     // ret.push(board[i * 10]);
@@ -10,4 +12,25 @@ export function convertBoard(board: any) {
     ret.push(l);
   }
   return ret;
+}
+
+export function convertIndexToCoords(index: number) {
+  if (index < 0 || index > 39) {
+    throw new Error("Index out of bounds");
+  }
+
+  if (index >= 0 && index <= 10) {
+    // TOP
+    return { row: 0, col: index };
+  } else if (index >= 11 && index <= 20) {
+    // RIGHT
+    return { row: index - 10, col: 10 };
+  } else if (index >= 21 && index <= 30) {
+    // BOTTOM
+    return { row: 10, col: 30 - index };
+  } else if (index >= 31 && index <= 39) {
+    // LEFT
+    return { row: 40 - index, col: 0 };
+  }
+  return { row: 0, col: 0 };
 }
