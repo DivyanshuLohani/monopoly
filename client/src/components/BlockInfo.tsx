@@ -1,5 +1,6 @@
 import { Block } from "../types";
-import BlockPricing from "./RentPricing";
+import BlockPricing from "./BlockPricing";
+import RentPricing from "./RentPricing";
 
 interface BlockInfoProps {
   blockData: Block;
@@ -13,6 +14,7 @@ export default function BlockInfo({ blockData }: BlockInfoProps) {
           {blockData.name}
         </span>
 
+        <RentPricing />
         <BlockPricing />
       </div>
       <div
