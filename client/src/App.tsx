@@ -11,6 +11,11 @@ function App() {
       errorElement: <ErrorPage />,
     },
     {
+      path: "/join/:roomId",
+      element: <HomeScreen />,
+      errorElement: <ErrorPage />,
+    },
+    {
       path: "room/:roomId",
       element: <GamePage />,
     },

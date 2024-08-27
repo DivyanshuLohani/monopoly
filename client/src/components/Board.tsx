@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { convertBoard } from "../lib/utils";
 import { Block as IBlock, BlockType } from "../types";
+import AppearanceSelector from "./AppearanceSelector";
 import Block from "./Blocks/block";
 import GoToJail from "./Blocks/GoToJail";
 import Jail from "./Blocks/Jail";
@@ -7,6 +9,8 @@ import Start from "./Blocks/Start";
 import Vacation from "./Blocks/Vacation";
 import Dice from "./Dice";
 import Token from "./Token/Token";
+import { socket } from "../socket/socket";
+import { Events } from "../types/events";
 
 const cityData: IBlock[] = [
   {
@@ -430,9 +434,23 @@ const cityData: IBlock[] = [
 ];
 
 export default function Board() {
+  const [appearranceOpen, setAppearanceOpen] = useState(true);
+
+  useEffect(() => {
+    function handleEnterRoom() {
+      setAppearanceOpen(false);
+    }
+    socket.on(Events.ENTERED_ROOM, handleEnterRoom);
+    return () => {
+      socket.off(Events.ENTERED_ROOM, handleEnterRoom);
+    };
+  });
+
   return (
     <div className="flex justify-center w-full h-full">
       <div className="board relative">
+        {appearranceOpen && <AppearanceSelector />}
+        {/* Token Container */}
         <div className="absolute w-full h-full top-0 bottom-0 right-0 left-0 pointer-events-none">
           <Token blockIndex={22} color="#aaff11" />
           <Token blockIndex={34} color="#ee11ff" />

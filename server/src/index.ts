@@ -15,6 +15,6 @@ const io = require("socket.io")(server, {
 });
 setupSocket(io);
 
-server.listen(8000, function () {
-  console.log("listening on *:8000");
+server.listen(5000, function () {
+  console.log("listening on *:5000");
 });
