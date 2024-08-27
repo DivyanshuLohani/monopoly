@@ -35,7 +35,7 @@ export default function HomeScreen() {
 
   function handleEnterRoom() {
     socket.connect();
-    socket.emit(Events.JOIN_ROOM, roomId);
+    socket.emit(Events.JOIN_ROOM, { roomId });
   }
 
   return (
