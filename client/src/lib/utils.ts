@@ -46,3 +46,37 @@ export function generateNewRoomID(length: number = 6) {
 
   return result;
 }
+
+export function generateRandomPlayerName() {
+  const adjectives = [
+    "Swift",
+    "Mighty",
+    "Brave",
+    "Clever",
+    "Bold",
+    "Fierce",
+    "Gentle",
+    "Nimble",
+    "Wise",
+    "Cunning",
+  ];
+
+  const nouns = [
+    "Lion",
+    "Falcon",
+    "Wizard",
+    "Knight",
+    "Panther",
+    "Dragon",
+    "Wolf",
+    "Titan",
+    "Shadow",
+    "Viper",
+  ];
+
+  const randomAdjective =
+    adjectives[Math.floor(Math.random() * adjectives.length)];
+  const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+
+  return `${randomAdjective} ${randomNoun}`;
+}

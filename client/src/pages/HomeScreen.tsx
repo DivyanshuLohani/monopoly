@@ -5,10 +5,15 @@ import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 import { generateNewRoomID } from "../lib/utils";
 import { Events } from "../types/events";
+import { useLocalStorage } from "@uidotdev/usehooks";
 
 export default function HomeScreen() {
   const navigate = useNavigate();
   const { roomId } = useParams();
+  const [playerName, setPlayerName] = useLocalStorage<string>(
+    "PLAYER_NAME",
+    ""
+  );
 
   useEffect(() => {
     if (!roomId) {
@@ -57,6 +62,8 @@ export default function HomeScreen() {
             type="text"
             name="name"
             id="name"
+            value={playerName}
+            onChange={(e) => setPlayerName(e.target.value)}
           />
         </div>
         {roomId && (

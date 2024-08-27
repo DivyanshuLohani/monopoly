@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import { socket } from "../socket/socket";
 import { Events } from "../types/events";
+import { useLocalStorage } from "@uidotdev/usehooks";
+import { generateRandomPlayerName } from "../lib/utils";
 
 function lightenHexColor(hex: string, percent: number) {
   // Convert hex to RGB
@@ -30,14 +32,13 @@ export default function AppearanceSelector() {
     "#FF4500", // Orange Red
   ];
   const [selectedIdx, setSelected] = useState<number | null>(null);
+  const [name] = useLocalStorage("PLAYER_NAME", generateRandomPlayerName());
 
   function handleEnterRoom() {
     if (!selectedIdx) return toast.error("Please select a color.");
-
+    if (!socket.connected) socket.connect();
     const color = tokenColors[selectedIdx];
-    console.log(color);
-
-    socket.emit(Events.ENTER_ROOM, { name: "Dani", color });
+    socket.emit(Events.ENTER_ROOM, { name, color });
   }
   return (
     <div className="absolute  w-full h-full bg-black/50 flex flex-col items-center justify-center z-50 p-32 ">
