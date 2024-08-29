@@ -3,11 +3,15 @@ export enum Events {
   ENTER_ROOM = "enter-room",
   ENTERED_ROOM = "entered-room",
 
+  PLAYER_JOINED = "player-joined",
+
   // Join Rooms
   JOIN_ROOM = "join-room",
   JOINED_GAME = "joined-game",
 
   GAME_STARTED = "game-started",
+  START_GAME = "start-game",
+  GAME_ENDED = "game-ended",
 
   // Dices
   ROLL_DICES = "roll-dices",
@@ -24,5 +28,6 @@ export enum Events {
   // Hotels
   CITY_LEVEL_CHANGED = "city-level-changed",
 
+  END_TURN = "end-turn",
   TURN_ENDED = "turn-ended",
 }

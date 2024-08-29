@@ -1,3 +1,8 @@
+export const GO_INDEX = 0;
+export const JAIL_INDEX = 10;
+export const VACATION_INDEX = 20;
+export const GOTO_JAIL_INDEX = 30;
+
 export interface GameMap {
   id: string;
   blocks: Block[];
@@ -9,8 +14,6 @@ export interface GameMap {
 export interface GameRoomSettings {
   isPrivate: boolean;
   maxPlayers: number;
-  canBotsJoin: number;
-  onlyUsers: boolean;
   shufflePlayerOrder: boolean;
   payDoubleRentWhenOwnFullSet: boolean;
   vacationCash: boolean;
@@ -68,7 +71,7 @@ export interface Player {
   money: number;
   bankruptedAt: Date | null;
   isBot: boolean;
-  debtTo: Player;
+  debtTo: Player | null | "bank";
   suspensionLeft: number; // For jail // Max 3 // Min 0
 }
 
@@ -78,15 +81,16 @@ export interface Block {
   price?: number;
   owner?: Player | null;
   isMortgaged: boolean;
-  // country: Country;
-  country: string;
+  country: Country;
   level?: number;
   housePrice?: number;
   hotelPrice?: number;
   blockType?: BlockType;
   category?: number; // For special properties
-  playersInJail: Player[]; // For jail
+  playersInJail?: Player[]; // For jail
   jailAmount?: number; // For Jail
+  payments: number[]; // Contains base rent // 1 house // 2 house // 3 house // 4 house // Hotel
+  erections: number;
 }
 
 export interface Country {
@@ -145,7 +149,7 @@ export enum BlockType {
 }
 
 export enum GameState {
-  Lobby,
+  Lobby = 0,
   Started,
   Ended,
 }

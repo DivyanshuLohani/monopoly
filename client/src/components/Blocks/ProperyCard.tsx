@@ -32,7 +32,7 @@ export default function ProperyCard({ blockData, side }: PropertyCardProps) {
       <div
         className="block bg-black cursor-pointer"
         style={{
-          backgroundImage: "url('/flag.png')",
+          backgroundImage: `url('/flags/${blockData.country.id.toLowerCase()}.svg')`,
         }}
       >
         <div className="block backdrop-blur-sm flex-col justify-between py-1 bg-gray-700/80">

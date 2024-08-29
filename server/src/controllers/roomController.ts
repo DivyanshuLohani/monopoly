@@ -25,15 +25,17 @@ export class RoomController {
     return room;
   }
 
-  createRoom(roomId: string, player: Player): Room {
-    const room = createNewRoom(roomId, player);
+  createRoom(roomId: string, socket: Socket): Room {
+    const room = createNewRoom(roomId, socket);
     this.setRoom(roomId, room);
     return room;
   }
 
-  joinRoom(roomId: string, player: Player): Room | undefined {
+  enterRoom(roomId: string, player: Player): Room | undefined {
     const room = this.rooms.get(roomId);
     if (room) {
+      if (room.state !== GameState.Lobby) return undefined;
+      if (room.players.length >= room.settings.maxPlayers) return undefined;
       room.players.push(player);
       return room;
     }
@@ -48,13 +50,17 @@ export class RoomController {
     this.rooms.delete(roomId);
   }
 
-  startGame(roomId: string): Room | undefined {
-    const room = this.rooms.get(roomId);
-    if (room) {
-      room.state = GameState.Started;
-      initializePlayers(room);
-      this.setRoom(roomId, room);
-    }
+  startGame(socket: Socket): Room | undefined {
+    const room = this.getRoom(socket);
+    if (!room) return;
+    if (room.host.id !== socket.id) return;
+    if (room.players.length < 2) return;
+    if (room.state !== GameState.Lobby) return;
+    room.state = GameState.Started;
+    initializePlayers(room);
+    room.currentPlayer = room.players[0];
+    this.setRoom(room.id, room);
+
     return room;
   }
 
@@ -74,6 +80,7 @@ export class RoomController {
       player.currentBlockIndex =
         player.currentBlockIndex % room.map.blocks.length;
     }
+
     // Check for doubles
     if (room.dices[0] === room.dices[1]) {
       room.dobulesInaRow++;
@@ -93,6 +100,11 @@ export class RoomController {
     const room = this.getRoom(socket);
     if (!room) return;
     if (room.currentPlayer.debtTo !== null) return;
+    // Update the player in list
+    room.players = room.players.map((e) => {
+      if (room.currentPlayer.id === e.id) return room.currentPlayer;
+      return e;
+    });
     room.currentPlayer =
       room.players[
         (room.players.indexOf(room.currentPlayer) + 1) % room.players.length

@@ -1,0 +1,587 @@
+[
+  {
+    "name": "Go",
+    "type": 1,
+    "isMortgaged": false,
+    "country": {
+      "id": "",
+      "name": ""
+    },
+    "payments": [],
+    "erections": 0
+  },
+  {
+    "name": "Hiroshima",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "JP",
+      "name": "Japan"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 150,
+    "housePrice": 38,
+    "hotelPrice": 53,
+    "payments": [60, 120, 180, 240, 300, 480]
+  },
+  {
+    "name": "Nagasaki",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "JP",
+      "name": "Japan"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 200,
+    "housePrice": 50,
+    "hotelPrice": 70,
+    "payments": [80, 160, 240, 320, 400, 640]
+  },
+  {
+    "name": "Income Tax",
+    "type": 7,
+    "isMortgaged": false,
+    "country": {
+      "id": "JP",
+      "name": "Japan"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 0,
+    "housePrice": 0,
+    "hotelPrice": 0,
+    "payments": [80, 160, 240, 320, 400, 640]
+  },
+  {
+    "name": "Tokyo",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "JP",
+      "name": "Japan"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 230,
+    "housePrice": 58,
+    "hotelPrice": 81,
+    "payments": [92, 184, 276, 368, 460, 736]
+  },
+  {
+    "name": "Railway",
+    "type": 4,
+    "isMortgaged": false,
+    "country": {
+      "id": "JP",
+      "name": "Japan"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 500,
+    "housePrice": 125,
+    "hotelPrice": 175,
+    "payments": [200, 400, 600, 800, 1000, 1600]
+  },
+  {
+    "name": "Strasbourg",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "FR",
+      "name": "France"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 160,
+    "housePrice": 40,
+    "hotelPrice": 56,
+    "payments": [64, 128, 192, 256, 320, 512]
+  },
+  {
+    "name": "Nice",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "FR",
+      "name": "France"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 210,
+    "housePrice": 53,
+    "hotelPrice": 74,
+    "payments": [84, 168, 252, 336, 420, 672]
+  },
+  {
+    "name": "Tresure",
+    "type": 9,
+    "isMortgaged": false,
+    "country": {
+      "id": "JP",
+      "name": "Japan"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 0,
+    "housePrice": 0,
+    "hotelPrice": 0,
+    "payments": [200, 400, 600, 800, 1000, 1600]
+  },
+  {
+    "name": "Toulon",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "FR",
+      "name": "France"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 180,
+    "housePrice": 45,
+    "hotelPrice": 63,
+    "payments": [72, 144, 216, 288, 360, 576]
+  },
+  {
+    "name": "Jail",
+    "type": 11,
+    "isMortgaged": false,
+    "country": {
+      "id": "",
+      "name": ""
+    },
+    "payments": [],
+    "erections": 0,
+    "playersInJail": []
+  },
+  {
+    "name": "Surat",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "IN",
+      "name": "India"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 200,
+    "housePrice": 50,
+    "hotelPrice": 70,
+    "payments": [80, 160, 240, 320, 400, 640]
+  },
+  {
+    "name": "Mumbai",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "IN",
+      "name": "India"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 180,
+    "housePrice": 45,
+    "hotelPrice": 63,
+    "payments": [72, 144, 216, 288, 360, 576]
+  },
+  {
+    "name": "Transport",
+    "type": 3,
+    "isMortgaged": false,
+    "country": {
+      "id": "IN",
+      "name": "India"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 400,
+    "housePrice": 100,
+    "hotelPrice": 140,
+    "payments": [160, 320, 480, 640, 800, 1280]
+  },
+  {
+    "name": "Pune",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "IN",
+      "name": "India"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 210,
+    "housePrice": 53,
+    "hotelPrice": 74,
+    "payments": [84, 168, 252, 336, 420, 672]
+  },
+  {
+    "name": "Calama",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "CL",
+      "name": "Chile"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 120,
+    "housePrice": 30,
+    "hotelPrice": 42,
+    "payments": [48, 96, 144, 192, 240, 384]
+  },
+  {
+    "name": "Valparaíso",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "CL",
+      "name": "Chile"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 100,
+    "housePrice": 25,
+    "hotelPrice": 35,
+    "payments": [40, 80, 120, 160, 200, 320]
+  },
+  {
+    "name": "Airport",
+    "type": 5,
+    "isMortgaged": false,
+    "country": {
+      "id": "IN",
+      "name": "India"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 450,
+    "housePrice": 113,
+    "hotelPrice": 158,
+    "payments": [180, 360, 540, 720, 900, 1440]
+  },
+  {
+    "name": "Alicante",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "ES",
+      "name": "Spain"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 80,
+    "housePrice": 20,
+    "hotelPrice": 28,
+    "payments": [32, 64, 96, 128, 160, 256]
+  },
+  {
+    "name": "Oviedo",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "ES",
+      "name": "Spain"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 130,
+    "housePrice": 33,
+    "hotelPrice": 46,
+    "payments": [52, 104, 156, 208, 260, 416]
+  },
+  {
+    "name": "Vacation",
+    "type": 12,
+    "isMortgaged": false,
+    "country": {
+      "id": "",
+      "name": ""
+    },
+    "payments": [],
+    "erections": 0
+  },
+  {
+    "name": "Birmingham",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "GB",
+      "name": "United Kingdom"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 250,
+    "housePrice": 63,
+    "hotelPrice": 88,
+    "payments": [100, 200, 300, 400, 500, 800]
+  },
+  {
+    "name": "Newcastle",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "GB",
+      "name": "United Kingdom"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 330,
+    "housePrice": 83,
+    "hotelPrice": 115,
+    "payments": [132, 264, 396, 528, 660, 1056]
+  },
+  {
+    "name": "Chance",
+    "type": 8,
+    "isMortgaged": false,
+    "country": {
+      "id": "ES",
+      "name": "Spain"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 0,
+    "housePrice": 0,
+    "hotelPrice": 0,
+    "payments": [52, 104, 156, 208, 260, 416]
+  },
+  {
+    "name": "Stoke-on-Trent",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "GB",
+      "name": "United Kingdom"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 350,
+    "housePrice": 88,
+    "hotelPrice": 122,
+    "payments": [140, 280, 420, 560, 700, 1200]
+  },
+  {
+    "name": "Tresure",
+    "type": 9,
+    "isMortgaged": false,
+    "country": {
+      "id": "GB",
+      "name": "United Kingdom"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 0,
+    "housePrice": 0,
+    "hotelPrice": 0,
+    "payments": [140, 280, 420, 560, 700, 1200]
+  },
+  {
+    "name": "Airport",
+    "type": 5,
+    "isMortgaged": false,
+    "country": {
+      "id": "IN",
+      "name": "India"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 450,
+    "housePrice": 113,
+    "hotelPrice": 158,
+    "payments": [180, 360, 540, 720, 900, 1440]
+  },
+  {
+    "name": "Calgary",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "CA",
+      "name": "Canada"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 170,
+    "housePrice": 43,
+    "hotelPrice": 59,
+    "payments": [68, 136, 204, 272, 340, 544]
+  },
+  {
+    "name": "Toronto",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "CA",
+      "name": "Canada"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 220,
+    "housePrice": 55,
+    "hotelPrice": 77,
+    "payments": [88, 176, 264, 352, 440, 704]
+  },
+  {
+    "name": "Brampton",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "CA",
+      "name": "Canada"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 190,
+    "housePrice": 48,
+    "hotelPrice": 67,
+    "payments": [76, 152, 228, 304, 380, 608]
+  },
+  {
+    "name": "Go To Jail",
+    "type": 10,
+    "isMortgaged": false,
+    "country": {
+      "id": "",
+      "name": ""
+    },
+    "payments": [],
+    "erections": 0
+  },
+  {
+    "name": "Tresure",
+    "type": 9,
+    "isMortgaged": false,
+    "country": {
+      "id": "US",
+      "name": "United States"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 0,
+    "housePrice": 0,
+    "hotelPrice": 0,
+    "payments": [180, 360, 540, 720, 900, 1500]
+  },
+  {
+    "name": "Airport",
+    "type": 5,
+    "isMortgaged": false,
+    "country": {
+      "id": "IN",
+      "name": "India"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 450,
+    "housePrice": 113,
+    "hotelPrice": 158,
+    "payments": [180, 360, 540, 720, 900, 1440]
+  },
+  {
+    "name": "Wuhan",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "CN",
+      "name": "China"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 120,
+    "housePrice": 30,
+    "hotelPrice": 42,
+    "payments": [48, 96, 144, 192, 240, 384]
+  },
+  {
+    "name": "Shijiazhuang",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "CN",
+      "name": "China"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 160,
+    "housePrice": 40,
+    "hotelPrice": 56,
+    "payments": [64, 128, 192, 256, 320, 512]
+  },
+  {
+    "name": "Chance",
+    "type": 8,
+    "isMortgaged": false,
+    "country": {
+      "id": "CA",
+      "name": "Canada"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 0,
+    "housePrice": 0,
+    "hotelPrice": 0,
+    "payments": [76, 152, 228, 304, 380, 608]
+  },
+  {
+    "name": "Los Angeles",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "US",
+      "name": "United States"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 450,
+    "housePrice": 113,
+    "hotelPrice": 158,
+    "payments": [180, 360, 540, 720, 900, 1500]
+  },
+  {
+    "name": "Luxury Tax",
+    "type": 6,
+    "isMortgaged": false,
+    "country": {
+      "id": "IN",
+      "name": "India"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 0,
+    "housePrice": 0,
+    "hotelPrice": 0,
+    "payments": [72, 144, 216, 288, 360, 576]
+  },
+  {
+    "name": "Dallas",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "US",
+      "name": "United States"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 300,
+    "housePrice": 75,
+    "hotelPrice": 105,
+    "payments": [120, 240, 360, 480, 600, 960]
+  },
+  {
+    "name": "New York",
+    "type": 2,
+    "isMortgaged": false,
+    "country": {
+      "id": "US",
+      "name": "United States"
+    },
+    "erections": 0,
+    "playersInJail": [],
+    "price": 350,
+    "housePrice": 88,
+    "hotelPrice": 122,
+    "payments": [140, 280, 420, 560, 700, 1120]
+  }
+]

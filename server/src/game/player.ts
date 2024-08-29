@@ -50,3 +50,17 @@ export function sendPlayerToJail(player: Player) {
   player.suspensionLeft = 3;
   player.currentBlockIndex = JAIL_INDEX;
 }
+
+export function initalizePlayer(socket: Socket): Player {
+  return {
+    id: socket.id,
+    name: "",
+    appearance: "#ffffff",
+    currentBlockIndex: 0,
+    money: 0,
+    bankruptedAt: null,
+    isBot: false,
+    debtTo: null,
+    suspensionLeft: 0, // For jail // Max 3 // Min 0
+  };
+}

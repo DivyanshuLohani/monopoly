@@ -48,7 +48,7 @@ export interface Mortgage {
 
 export interface Room {
   id: string;
-  host: Player | null;
+  host: Player;
   map: GameMap;
   players: Player[];
   dices: [number, number];

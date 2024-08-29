@@ -14,13 +14,17 @@ export default function BlockInfo({ blockData }: BlockInfoProps) {
           {blockData.name}
         </span>
 
-        <RentPricing />
-        <BlockPricing />
+        <RentPricing payments={blockData.payments} />
+        <BlockPricing
+          price={blockData.price ?? 0}
+          hotelPrice={blockData.hotelPrice ?? 0}
+          housePrice={blockData.housePrice ?? 0}
+        />
       </div>
       <div
         className="block blur-sm flex-col justify-between absolute top-0 bottom-0 right-0 left-0"
         style={{
-          backgroundImage: "url('/flag.png')",
+          backgroundImage: `url('/flags/${blockData.country.id.toLowerCase()}.svg')`,
         }}
       ></div>
     </div>

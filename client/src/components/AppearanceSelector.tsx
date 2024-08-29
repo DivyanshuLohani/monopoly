@@ -4,6 +4,7 @@ import { socket } from "../socket/socket";
 import { Events } from "../types/events";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { generateRandomPlayerName } from "../lib/utils";
+import { useGame } from "../context/GameContext";
 
 function lightenHexColor(hex: string, percent: number) {
   // Convert hex to RGB
@@ -19,26 +20,27 @@ function lightenHexColor(hex: string, percent: number) {
   return `#${(0x1000000 + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
 }
 
+const tokenColors = [
+  "#FF5733", // Vibrant Orange
+  "#33FF57", // Bright Green
+  "#3357FF", // Bold Blue
+  "#F733FF", // Bright Purple
+  "#FF33A5", // Hot Pink
+  "#F5A623", // Warm Yellow
+  "#FFC300", // Golden Yellow
+  "#00BFFF", // Deep Sky Blue
+  "#FF4500", // Orange Red
+];
 export default function AppearanceSelector() {
-  const tokenColors = [
-    "#FF5733", // Vibrant Orange
-    "#33FF57", // Bright Green
-    "#3357FF", // Bold Blue
-    "#F733FF", // Bright Purple
-    "#FF33A5", // Hot Pink
-    "#F5A623", // Warm Yellow
-    "#FFC300", // Golden Yellow
-    "#00BFFF", // Deep Sky Blue
-    "#FF4500", // Orange Red
-  ];
   const [selectedIdx, setSelected] = useState<number | null>(null);
   const [name] = useLocalStorage("PLAYER_NAME", generateRandomPlayerName());
+  const { room } = useGame();
 
   function handleEnterRoom() {
     if (!selectedIdx) return toast.error("Please select a color.");
     if (!socket.connected) socket.connect();
     const color = tokenColors[selectedIdx];
-    socket.emit(Events.ENTER_ROOM, { name, color });
+    socket.emit(Events.ENTER_ROOM, { name, color, roomId: room.id });
   }
   return (
     <div className="absolute  w-full h-full bg-black/50 flex flex-col items-center justify-center z-50 p-32 ">
