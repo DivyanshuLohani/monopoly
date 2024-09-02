@@ -27,7 +27,7 @@ export default function Board() {
   });
 
   return (
-    <div className="flex justify-center w-full h-full">
+    <div className="flex justify-center w-3/5 h-full">
       <div className="board relative">
         {appearranceOpen && <AppearanceSelector />}
         {/* Token Container */}
