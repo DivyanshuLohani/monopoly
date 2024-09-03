@@ -40,6 +40,13 @@ export default function AppearanceSelector() {
     if (!selectedIdx) return toast.error("Please select a color.");
     if (!socket.connected) socket.connect();
     const color = tokenColors[selectedIdx];
+    let colorTaken = false;
+    room.players.forEach((e) => {
+      if (e.appearance === color) {
+        colorTaken = true;
+      }
+    });
+    if (colorTaken) return toast.error("Color already taken.");
     socket.emit(Events.ENTER_ROOM, { name, color, roomId: room.id });
   }
   return (

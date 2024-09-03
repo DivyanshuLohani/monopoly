@@ -13,19 +13,10 @@ const PlayerDisplay: React.FC = () => {
     visible: { x: 0, opacity: 1 },
   };
 
-  // Variants for parent to scale up slightly when a new child is added
-  const parentVariants = {
-    initial: { scale: 1 },
-    animate: { scale: 1.05 },
-    transition: { duration: 0.2, type: "spring", stiffness: 300 },
-  };
-
   return (
     <motion.div
       className="flex flex-col self-start bg-gray-900 rounded-lg w-full p-3 gap-2 overflow-hidden"
-      initial="initial"
-      animate="animate"
-      variants={parentVariants}
+      layout // Add the layout prop to animate layout changes smoothly
     >
       {room.players.length === 0 && (
         <span className="opacity-70 text-center">Waiting for players</span>
@@ -33,13 +24,14 @@ const PlayerDisplay: React.FC = () => {
       <AnimatePresence>
         {room.players.map((player) => (
           <motion.div
-            className="p-4 rounded shadow-md bg-slate-950 relative"
+            className="p-4 rounded shadow-md bg-slate-950"
             initial="hidden"
             animate="visible"
             exit={{ x: "100%", opacity: 0 }} // Animation on exit
             variants={slideInVariants}
             transition={{ duration: 0.2 }}
             key={player.id}
+            layout // Add the layout prop to animate the element's layout change
           >
             <div className="flex items-center gap-2">
               <div
